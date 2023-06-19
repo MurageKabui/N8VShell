@@ -53,21 +53,27 @@ Simulate  a conversation
 const dialogue = [
 	{
 		text: "Excuse me, what is the date and time?",
-		identity: 'en-au-x-auc-local',
-		pitch: 0.75,
 		rate: 1.0,
+		pitch: 0.75,
+		identity: 'en-au-x-auc-local',
 	},
 	{
 		text: "It is " + new Date() + ' at the moment.',
-		identity: 'en-au-x-auc-local',
-		pitch: 0.75,
 		rate: 1.0,
+		pitch: 0.75,
+		identity: 'en-in-x-ahp-network',
 	},
 	{
-		text: "Thank you kind sir!",
-		identity: 'en-au-x-auc-local',
-		pitch: 0.75,
+		text: "Thank you so much!",
 		rate: 1.0,
+		pitch: 0.75,
+		identity: 'en-au-x-auc-local',
+	},
+	{
+		text: "You are very much welcome!",
+		rate: 1.0,
+		pitch: 0.75,
+		identity: 'en-in-x-ahp-network',
 	}
 ]
 
@@ -75,8 +81,8 @@ const dialogue = [
 for (const obj of dialogue) {
     await tts.speak(
         obj.text,
-        obj.pitch,
         obj.rate,
+        obj.pitch,
         obj.identity
     );
 }
