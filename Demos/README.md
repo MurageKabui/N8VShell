@@ -71,14 +71,15 @@ const dialogue = [
 	}
 ]
 
-// Loop through the dialog array to simulate a conversation.
-dialogue.forEach((obj) => 
-	await tts.speak(
-	    obj.text,
-	    obj.pitch,
-	    obj.rate,
-	    obj.identity
-));
+// Loop through the dialogue array to simulate a conversation
+for (const obj of dialogue) {
+    await tts.speak(
+        obj.text,
+        obj.pitch,
+        obj.rate,
+        obj.identity
+    );
+}
 
 nts.dialog.alert('Done!');
 ```
